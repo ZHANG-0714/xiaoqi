@@ -1,0 +1,112 @@
+<template>
+  <!-- 公共组件 -->
+  <div>
+    <el-container>
+      <!-- 导航栏头部 -->
+      <el-header>Header</el-header>
+      <el-container>
+        <!-- 侧边栏 -->
+        <el-aside width="200px">
+          <el-row class="tac">
+            <el-col :span="12">
+              <el-menu
+                default-active="1"
+                class="el-menu-vertical-demo"
+                @open="handleOpen"
+                @close="handleClose"
+                background-color="#545c64"
+                text-color="#fff"
+                active-text-color="#ffd04b"
+              >
+                  <el-menu-item index="1">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title">首页</span>
+                </el-menu-item>
+
+                <el-menu-item index="2">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title">导航二</span>
+                </el-menu-item>
+
+                <el-menu-item index="3" disabled>
+                  <i class="el-icon-document"></i>
+                  <span slot="title">导航三</span>
+                </el-menu-item>
+
+                <el-menu-item index="4">
+                  <i class="el-icon-setting"></i>
+                  <span slot="title">导航四</span>
+                </el-menu-item>
+
+              </el-menu>
+            </el-col>
+          </el-row>
+        </el-aside>
+        <!-- 主体内容 -->
+        <el-main>Main</el-main>
+      </el-container>
+    </el-container>
+    <!-- <router-view></router-view> -->
+  </div>
+</template>
+
+<script>
+export default {
+  name: "",
+  props: {},
+  components: {},
+  data() {
+    return {};
+  },
+
+  methods: {
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    }
+  },
+
+  mounted() {},
+  watch: {},
+  computed: {}
+};
+</script>
+
+<style scoped lang='scss'>
+.el-header,
+.el-footer {
+  background-color: #b3c0d1;
+  color: #333;
+  text-align: center;
+  line-height: 60px;
+}
+
+.el-aside {
+  background-color: #d3dce6;
+  color: #333;
+  text-align: center;
+  line-height: 200px;
+}
+
+.el-main {
+  background-color: #e9eef3;
+  color: #333;
+  text-align: center;
+  line-height: 160px;
+}
+
+body > .el-container {
+  margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
+}
+</style>

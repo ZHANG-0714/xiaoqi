@@ -1,0 +1,57 @@
+<template>
+  <!-- 注册 -->
+
+  <div>
+    <div class="back">
+      <img src="../assets/002.jpg" alt class="img" />
+
+      <el-card class="box-card">
+        <div class="backstage">xiaoqi后台管理系统</div>
+      </el-card>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "",
+  props: {},
+  components: {},
+  data() {
+    return {};
+  },
+  methods: {},
+  mounted() {},
+  watch: {},
+  computed: {}
+};
+</script>
+
+<style scoped lang='scss'>
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-card {
+  width: 450px;
+  height: 300px;
+  position: absolute;
+  top: 30%;
+  // background-color: rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+.img {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+.backstage {
+  width: 100%;
+  height: 100px;
+  border-bottom: 1.5px solid rgba(225, 225, 225, 0.5);
+}
+</style>

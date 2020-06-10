@@ -1,0 +1,45 @@
+<template>
+<!-- 注册 -->
+
+ <div>
+     <div>
+         <img src="" alt="" class="img">
+     </div>
+
+ </div>
+</template>
+
+<script>
+ export default {
+   name: '',
+   props: {
+   },
+   components: {
+
+   },
+   data () {
+     return {
+
+     }
+   },
+   methods: {
+
+   },
+   mounted() {
+
+   },
+   watch: {
+
+   },
+   computed: {
+
+   }
+ }
+</script>
+
+<style scoped lang='scss'>
+.background{
+
+}
+
+</style>
