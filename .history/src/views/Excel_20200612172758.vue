@@ -31,7 +31,7 @@
           <el-button type="primary">导出xls</el-button>
         </download-excel>        
      
-        <download-excel :data="tableData" :fields="json_fields" name="filename.csv" type="csv">
+        <download-excel :data="tableData" :fields="json_fields" name="filename.xls" type="csv">
           <el-button type="danger">导出csy</el-button>
         </download-excel> 
 

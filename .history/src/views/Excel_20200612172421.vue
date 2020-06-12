@@ -28,13 +28,13 @@
     <div class="button">
       <!-- 导出excel -->
         <download-excel :data="tableData" :fields="json_fields" name="filename.xls" >
-          <el-button type="primary">导出xls</el-button>
+          <el-button>导出excel</el-button>
         </download-excel>        
      
-        <download-excel :data="tableData" :fields="json_fields" name="filename.csv" type="csv">
-          <el-button type="danger">导出csy</el-button>
-        </download-excel> 
 
+      <div>
+        <el-button type="danger">导出scy</el-button>
+      </div>
     </div>
 
 

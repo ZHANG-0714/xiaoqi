@@ -26,15 +26,18 @@
     ></el-pagination>
     <!-- 按钮 -->
     <div class="button">
-      <!-- 导出excel -->
-        <download-excel :data="tableData" :fields="json_fields" name="filename.xls" >
-          <el-button type="primary">导出xls</el-button>
-        </download-excel>        
-     
-        <download-excel :data="tableData" :fields="json_fields" name="filename.csv" type="csv">
-          <el-button type="danger">导出csy</el-button>
-        </download-excel> 
-
+      <div>
+        <el-button
+          type="primary"
+          class="export-excel-wrapper"
+          :data="tableData"
+          :fields="json_fields"
+          name="filename.xls"
+        >导出xls</el-button>
+      </div>
+      <div>
+        <el-button type="danger">导出scy</el-button>
+      </div>
     </div>
 
 
@@ -50,12 +53,6 @@ export default {
   components: {},
   data() {
     return {
-       json_fields: {
-            '名称': 'NAME',
-            '商品编号': 'GOODS_SERIAL_NUMBER',
-            '原价': 'phone.ORI_PRICE',
-            '现价': 'PRESENT_PRICE',
-        },
       // Excel请求
       tableData: [],
       // 默认是第几页
