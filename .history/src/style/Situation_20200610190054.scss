@@ -1,0 +1,39 @@
+.el--input--width{
+    .el-form-item__label {
+        padding: 0;
+        text-align: left;
+    }
+    .el-input__inner{
+        margin-left: 10px;
+        background-color: rgba(199, 196, 196, 0.4);
+        color: #e2dfdf;
+        border: 0;
+   }
+   .el-form-item__label{
+       color: #e2dfdf;
+       border: 0;
+   }
+   .el-form-item{
+        margin-bottom: 40px;
+   }
+   .el-form-item__error{
+    color: #e2dfdf;
+   }
+   .el-card__body{
+    padding: 0;
+  }
+
+}
+.public{
+  .el-main{
+    padding: 30px 10px;
+  }
+  .el-table td, .el-table th{
+    padding: 7px;
+}
+  .el-table  .cell{
+    font-size: 13px;
+    width: 186px;
+  }
+ 
+}
