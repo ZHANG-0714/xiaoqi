@@ -17,7 +17,7 @@
           <el-button type="info" plain  v-if="scope.row.category === 'React'">{{ scope.row.category }}</el-button>
           <el-button type="primary" plain  v-if="scope.row.category === 'Node.js'">{{ scope.row.category }}</el-button>
           <el-button type="success" plain  v-if="scope.row.category === '性能优化'">{{ scope.row.category }}</el-button>
-          <el-button type="info" plain  v-if="scope.row.category === 'JavaScipt'">{{ scope.row.category }}</el-button>
+          <el-button type="info"  v-if="scope.row.category === 'JavaScript'">{{ scope.row.category }}</el-button>
           <el-button type="success" plain  v-if="scope.row.category === '小程序'">{{ scope.row.category }}</el-button>
           <el-button type="danger" plain  v-if="scope.row.category === '工具类'">{{ scope.row.category }}</el-button>
           <el-button type="primary" plain  v-if="scope.row.category === '其他'">{{ scope.row.category }}</el-button>

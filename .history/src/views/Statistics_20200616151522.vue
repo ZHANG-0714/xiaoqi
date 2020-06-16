@@ -139,13 +139,13 @@ export default {
       this.time = res.data.data.filter(item =>{
         return item.date === dayjs().format('YYYY-MM-DD')
       })
-      // console.log(this.time)
+      console.log(this.time)
 
       //过滤来源是否为原创，是就return
       this.original = res.data.data.filter(item =>{
          return item.source === '原创'
       })
-      // console.log(this.original)
+      console.log(this.original)
     })
     .catch(err =>{
       console.log(err)

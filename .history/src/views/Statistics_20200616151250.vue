@@ -17,7 +17,7 @@
       <div class="original">
         <div class="release">
           <div>原创文章</div>
-          <div class="article">{{original.length}}</div>
+          <div class="article">{{}}</div>
         </div>
 
         <div>
@@ -83,7 +83,6 @@ export default {
       }
     return {
       time:'',
-      original:'',
     // 饼图
       chartData: {
           columns: ['分类', '数量'],
@@ -139,13 +138,12 @@ export default {
       this.time = res.data.data.filter(item =>{
         return item.date === dayjs().format('YYYY-MM-DD')
       })
-      // console.log(this.time)
+      console.log(this.time)
 
-      //过滤来源是否为原创，是就return
       this.original = res.data.data.filter(item =>{
          return item.source === '原创'
       })
-      // console.log(this.original)
+      console.log(this.original)
     })
     .catch(err =>{
       console.log(err)

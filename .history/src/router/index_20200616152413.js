@@ -35,7 +35,7 @@ Vue.use(VueRouter)
         name: 'Published',
         component: () => import('../views/Published.vue'),  //已发布
         meta:{
-          title:"已发布"
+          title:"分页表格"
         }
       },
       {
@@ -43,7 +43,7 @@ Vue.use(VueRouter)
         name: 'Edit',
         component: () => import('../views/Edit.vue'),  //编辑
         meta:{
-          title:"编辑"
+          title:"分页表格"
         }
       },
       {
@@ -51,7 +51,7 @@ Vue.use(VueRouter)
         name: 'See',
         component: () => import('../views/See.vue'),  //查看
         meta:{
-          title:"查看"
+          title:"分页表格"
         }
       },
       {
@@ -59,7 +59,7 @@ Vue.use(VueRouter)
         name: 'Statistics',
         component: () => import('../views/Statistics.vue'),  //统计
         meta:{
-          title:"统计"
+          title:"分页表格"
         }
       },
       {
@@ -67,7 +67,7 @@ Vue.use(VueRouter)
         name: 'Publish',
         component: () => import('../views/Publish.vue'),  //发表文章
         meta:{
-          title:"发表文章"
+          title:"分页表格"
         }
       },
       {
@@ -75,7 +75,7 @@ Vue.use(VueRouter)
         name: 'Tab',
         component: () => import('../views/Tab.vue'),  //标签页
         meta:{
-          title:"标签页"
+          title:"分页表格"
         }
       },
       {
@@ -83,7 +83,7 @@ Vue.use(VueRouter)
         name: 'Excel',
         component: () => import('../views/Excel.vue'),  //导出excel
         meta:{
-          title:"导出excel"
+          title:"分页表格"
         }
       },
       {
@@ -91,7 +91,7 @@ Vue.use(VueRouter)
         name: 'Picture',
         component: () => import('../views/Picture.vue'),  //图片上传
         meta:{
-          title:"图片上传"
+          title:"分页表格"
         }
       },
       {
@@ -99,7 +99,7 @@ Vue.use(VueRouter)
         name: 'signOut',
         component: () => import('../views/signOut.vue'),  //退出系统
         meta:{
-          title:"退出系统"
+          title:"分页表格"
         }
       },
     ]
@@ -108,17 +108,11 @@ Vue.use(VueRouter)
     path: '/register',
     name: 'Register',
     component: () => import('../views/Register.vue'),  //注册
-    meta:{
-      title:"注册"
-    }
   },
   {
     path: '/Signin',
     name: 'Signin',
-    component: () => import('../views/Signin.vue'),  //登录
-    meta:{
-      title:"登录"
-    }
+    component: () => import('../views/Signin.vue')  //登录
   },
 ]
 

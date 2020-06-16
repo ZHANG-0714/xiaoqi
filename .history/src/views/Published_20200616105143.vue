@@ -10,14 +10,14 @@
         <!-- 作者 -->
         <el-table-column prop="author" label="作者" width="100"></el-table-column>
         <!-- 类目 -->
-        <el-table-column prop="category" label="类目" width="200">
+        <el-table-column prop="category" label="类目" width="150">
           <template slot-scope="scope">
           
           <el-button type="success" plain  v-if="scope.row.category === 'Vue'">{{ scope.row.category }}</el-button>
           <el-button type="info" plain  v-if="scope.row.category === 'React'">{{ scope.row.category }}</el-button>
           <el-button type="primary" plain  v-if="scope.row.category === 'Node.js'">{{ scope.row.category }}</el-button>
           <el-button type="success" plain  v-if="scope.row.category === '性能优化'">{{ scope.row.category }}</el-button>
-          <el-button type="info" plain  v-if="scope.row.category === 'JavaScipt'">{{ scope.row.category }}</el-button>
+          <el-button type="warning" plain  v-if="scope.row.category === 'JavaScript'">{{ scope.row.category }}</el-button>
           <el-button type="success" plain  v-if="scope.row.category === '小程序'">{{ scope.row.category }}</el-button>
           <el-button type="danger" plain  v-if="scope.row.category === '工具类'">{{ scope.row.category }}</el-button>
           <el-button type="primary" plain  v-if="scope.row.category === '其他'">{{ scope.row.category }}</el-button>

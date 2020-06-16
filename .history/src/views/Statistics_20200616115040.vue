@@ -6,7 +6,7 @@
       <div class="today">
         <div class="release">
           <div>今日发布</div>
-          <div class="article">{{time.length}}</div>
+          <div class="article">{{}}</div>
         </div>
 
         <div>
@@ -17,7 +17,7 @@
       <div class="original">
         <div class="release">
           <div>原创文章</div>
-          <div class="article">{{original.length}}</div>
+          <div class="article">{{}}</div>
         </div>
 
         <div>
@@ -66,7 +66,6 @@
 
 <script>
 import axios from 'axios';
-import dayjs from 'dayjs';
 import groupBy from 'lodash/groupBy'
 
 export default {
@@ -78,12 +77,10 @@ export default {
         roseType: 'radius'
       },
       this.chartSettingr = {
-        dimension: '时间',
+        dimension: '分类',
         metrics: '数量'
       }
     return {
-      time:'',
-      original:'',
     // 饼图
       chartData: {
           columns: ['分类', '数量'],
@@ -96,7 +93,7 @@ export default {
         },
     // 瀑布图
         waterfall: {
-          columns: ['时间', '数量'],
+          columns: ['分类', '数量'],
           rows: []
         }
     };
@@ -105,7 +102,6 @@ export default {
   mounted() {
     axios.get('api/article/allArticle').then(res =>{
       console.log(res.data.data)
-
       //取发布文章的类目
       let obj = groupBy(res.data.data,'category')
       for (let i in obj){
@@ -127,25 +123,11 @@ export default {
       for (let i in objs){
         this.waterfall.rows.push({
           '数量': objs[i].length,   //循环对象，拿每一项数据push进去
-          '时间': dayjs(i).format('YYYY年MM月DD日')
+          '分类': i
         })
-
       }
-      //循环所有时间转成 YYYY-MM-DD
-      res.data.data.map(item =>{
-        item.date = dayjs(item.date).format('YYYY-MM-DD')
-      })
-      //过滤时间判断等于今天的时间就return
-      this.time = res.data.data.filter(item =>{
-        return item.date === dayjs().format('YYYY-MM-DD')
-      })
-      // console.log(this.time)
+      console.log(obj)
 
-      //过滤来源是否为原创，是就return
-      this.original = res.data.data.filter(item =>{
-         return item.source === '原创'
-      })
-      // console.log(this.original)
     })
     .catch(err =>{
       console.log(err)

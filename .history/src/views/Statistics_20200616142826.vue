@@ -6,7 +6,7 @@
       <div class="today">
         <div class="release">
           <div>今日发布</div>
-          <div class="article">{{time.length}}</div>
+          <div class="article">{{}}</div>
         </div>
 
         <div>
@@ -17,7 +17,7 @@
       <div class="original">
         <div class="release">
           <div>原创文章</div>
-          <div class="article">{{original.length}}</div>
+          <div class="article">{{}}</div>
         </div>
 
         <div>
@@ -82,8 +82,6 @@ export default {
         metrics: '数量'
       }
     return {
-      time:'',
-      original:'',
     // 饼图
       chartData: {
           columns: ['分类', '数量'],
@@ -105,7 +103,6 @@ export default {
   mounted() {
     axios.get('api/article/allArticle').then(res =>{
       console.log(res.data.data)
-
       //取发布文章的类目
       let obj = groupBy(res.data.data,'category')
       for (let i in obj){
@@ -131,21 +128,13 @@ export default {
         })
 
       }
-      //循环所有时间转成 YYYY-MM-DD
-      res.data.data.map(item =>{
+      //获取当前时间
+      let arr = res.data.data.map(item =>{
         item.date = dayjs(item.date).format('YYYY-MM-DD')
+        console.log(item.date)
       })
-      //过滤时间判断等于今天的时间就return
-      this.time = res.data.data.filter(item =>{
-        return item.date === dayjs().format('YYYY-MM-DD')
-      })
-      // console.log(this.time)
+      console.log(arr)
 
-      //过滤来源是否为原创，是就return
-      this.original = res.data.data.filter(item =>{
-         return item.source === '原创'
-      })
-      // console.log(this.original)
     })
     .catch(err =>{
       console.log(err)
